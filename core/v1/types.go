@@ -2189,9 +2189,8 @@ type TCPSocketAction struct {
 }
 
 type GRPCAction struct {
-	// Port number of the gRPC service. Number must be in the range 1 to 65535.
-	Port int32 `json:"port" protobuf:"bytes,1,opt,name=port"`
-
+	// Port name or number of the gRPC service. Number must be in the range 1 to 65535.
+	Port intstr.IntOrString `json:"port" protobuf:"bytes,1,opt,name=port"`
 	// Service is the name of the service to place in the gRPC HealthCheckRequest
 	// (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
 	//
