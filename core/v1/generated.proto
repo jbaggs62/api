@@ -1748,8 +1748,8 @@ message GCEPersistentDiskVolumeSource {
 }
 
 message GRPCAction {
-  // Port number of the gRPC service. Number must be in the range 1 to 65535.
-  optional int32 port = 1;
+  // Port name or number of the gRPC service. Number must be in the range 1 to 65535.
+  optional k8s.io.apimachinery.pkg.util.intstr.IntOrString port = 1;
 
   // Service is the name of the service to place in the gRPC HealthCheckRequest
   // (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md).
